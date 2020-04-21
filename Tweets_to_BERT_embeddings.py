@@ -1,4 +1,4 @@
-# The original notebook is hosted on Kaggle. Link -> https://www.kaggle.com/akdnic/bert-tweets-to-vectors
+## Note --- The original notebook is hosted on Kaggle. Link -> https://www.kaggle.com/akdnic/bert-tweets-to-vectors
 # This copy of code is for references only
 
 # Import required libraries
@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import re
 import pickle
 
-# Install bert-as-service
+# Install bert-as-service ## Works successfully in Kaggle, please read the note at the Top
 !pip install bert-serving-server
 !pip install bert-serving-client
 

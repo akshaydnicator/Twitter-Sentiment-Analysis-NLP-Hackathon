@@ -78,11 +78,11 @@ test['clean_tweet'] = lemmatization(test['clean_tweet'])
 
 print(train.head())
 
-# Importing tensorflow hub and loading locally saved ELMo embeddings model
+# Importing tensorflow hub and loading locally saved ELMo embeddings model from ELMo folder in C: drive
 import tensorflow_hub as hub
 import tensorflow as tf
 
-elmo = hub.Module('C:\\Users\\Akshay Kaushal\\Desktop\\Desktop\\Akki\\NLP\\Data Processing\\Hackathon\\ELMo', trainable=True)
+elmo = hub.Module('C:\\Users\\Hackathon\\ELMo', trainable=True)
 
 # Function to convert tweets to ELMo embeddings
 def elmo_vectors(x):
