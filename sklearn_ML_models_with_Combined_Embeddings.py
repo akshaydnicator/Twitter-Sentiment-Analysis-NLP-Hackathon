@@ -25,8 +25,9 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
 
-## Load any of the five models given below; LinearSVC, LogisticsRegression, KneighborsClassifier, RandomForestClassifier or DecisionTreeClassifier
-# If using raw text, may use a variant of Vectorizer in front of an ML model in the pipeline 
+### Load any of the five models given below; LinearSVC, LogisticsRegression, KneighborsClassifier, RandomForestClassifier or DecisionTreeClassifier
+## If using raw text, may use a variant of Vectorizer given below as CountVectorizer and TfidfVectorizer 
+## placed in front of an ML model in the pipeline 
 
 from sklearn.pipeline import Pipeline
 #from sklearn.feature_extraction.text import CountVectorizer
