@@ -59,6 +59,7 @@ test['clean_tweet'] = test['clean_tweet'].apply(lambda x: ' '.join(x.split()))
 
 
 # Convert cleaned tweets into Spacy word vectors
+# The model returns 300-dimensional embeddings
 tweets = train['clean_tweet']
 word_vec = [nlp(word).vector for word in tweets]
 X_tr = np.array(word_vec)
