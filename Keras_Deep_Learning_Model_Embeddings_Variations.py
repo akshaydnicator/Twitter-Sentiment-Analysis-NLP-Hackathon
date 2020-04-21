@@ -1,4 +1,5 @@
 # Import required libraries
+
 import numpy as np
 import pandas as pd
 import re
@@ -8,7 +9,7 @@ import pickle
 # and assign it to X
 pickle_in = open("Spacy_bert_elmo_train.pickle","rb")     # Also try Spacy_bert_train.pickle or Spacy_elmo_train.pickle or bert_elmo_train.pickle
 X = pickle.load(pickle_in)
-X.shape
+print(X.shape)
 
 # Load train dataset
 df = pd.read_csv('train.csv')
@@ -75,7 +76,7 @@ relr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=4, min_lr=0.00
 callbacks_list = [es,ch,relr]
 
 # Train model on the traning dataset
-history = model.fit(X_train,y_train,epochs=5000, verbose=2, shuffle=True, batch_size=24, validation_split=0.1, callbacks=callbacks_list)
+history = model.fit(X_train,y_train,epochs=100, verbose=2, shuffle=True, batch_size=64, validation_split=0.1, callbacks=callbacks_list)
 
 # Plot Training Accuracy Vs Validation accuracy and Training Loss Vs Validation loss charts
 print('\nPerformance Charts\n')
@@ -114,15 +115,15 @@ print(metrics.classification_report(y_test.argmax(axis=1),predictions))
 print(metrics.accuracy_score(y_test.argmax(axis=1),predictions))
 
 # Load test dataset for making final predictions using the latest updated instance of trained model
-df1 = pd.read_csv('C:\\Users\\Akshay Kaushal\\Desktop\\Desktop\\Akki\\NLP\\Data Processing\\Hackathon\\test.csv')
+df1 = pd.read_csv('test.csv')
 print(df1.head())
 
-# Load corresponding tweet embeddings for test dataset as it was loaded for training dataset
+# Load corresponding tweet embeddings for test dataset same as it was loaded for training dataset
 pickle_in = open("Spacy_bert_elmo_test.pickle","rb")
 test_X = pickle.load(pickle_in)
 print(test_X.shape)
 
-# You may have to reshape the test tweet embeddings dataset in order to feed into ConV1D layer of the model
+# You may have to reshape the test tweet embeddings dataset in order to feed into Conv1D layer of the model
 # However comment out this step if not using Convolution Neural Network layer in the model
 test_X = np.reshape(test_X, test_X.shape + (1,))
 print(test_X.shape)
