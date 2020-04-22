@@ -91,12 +91,12 @@ spacy_bert_elmo_test = np.hstack((spacy_test, bert_test, elmo_test))
 
 print(spacy_bert_elmo_train.shape, spacy_bert_elmo_test.shape)
 
-# save bert_elmo_train
+# save Spacy_bert_elmo_train
 pickle_out = open("Spacy_bert_elmo_train.pickle","wb")
 pickle.dump(spacy_bert_elmo_train, pickle_out)
 pickle_out.close()
 
-# save bert_elmo_test
+# save Spacy_bert_elmo_test
 pickle_out = open("Spacy_bert_elmo_test.pickle","wb")
 pickle.dump(spacy_bert_elmo_test, pickle_out)
 pickle_out.close()
