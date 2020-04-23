@@ -5,6 +5,7 @@ import pandas as pd
 import re
 import spacy
 import pickle
+
 pd.set_option('display.max_colwidth', 100)
 
 # Load the largest english language vector collection from Spacy
