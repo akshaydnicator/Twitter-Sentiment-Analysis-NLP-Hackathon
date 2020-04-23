@@ -8,6 +8,9 @@ For training the models, a labelled tweets dataset is provided. The dataset is p
 - train.csv: 7,920 tweets
 - test.csv: 1,953 tweets
 
+## Acknowlegdement
+Many snippets of the code used may have been taken from other open GitHub repositories to ease the rapid production and pace up the flow in the competition. It is acknowledged here that data has been gathered from multiple sources. I am thankful to all of them for their mentorship. 
+
 ## Approach and Implementation
 ### Data Preparation
 Both the training and test file tweets have been **pre-processed using one standardized process** as given below:
