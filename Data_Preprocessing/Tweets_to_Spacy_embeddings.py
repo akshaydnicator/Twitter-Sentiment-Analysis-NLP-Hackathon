@@ -76,7 +76,9 @@ start_time = time.monotonic()
 
 # Lemmatize the tokens
 train['clean_tweet'] = lemmatization(train['clean_tweet'])
+train['clean_tweet'] = train['clean_tweet'].str.replace("-PRON-", "")
 test['clean_tweet'] = lemmatization(test['clean_tweet'])
+test['clean_tweet'] = test['clean_tweet'].str.replace("-PRON-", "")
 
 print(train.tail(), test.tail())
    
