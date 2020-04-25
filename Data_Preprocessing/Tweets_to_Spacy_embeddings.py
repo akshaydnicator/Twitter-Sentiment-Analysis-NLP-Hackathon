@@ -74,7 +74,7 @@ def lemmatization(texts):
 # Record the time to lemmatize the tweets and converting them into vectors using spaCy
 start_time = time.monotonic()
 
-# Lemmatize the tokens
+# Lemmatise the tokens
 train['clean_tweet'] = lemmatization(train['clean_tweet'])
 train['clean_tweet'] = train['clean_tweet'].str.replace("-PRON-", "")
 test['clean_tweet'] = lemmatization(test['clean_tweet'])
